@@ -1,0 +1,1 @@
+Scratch-ai is an ai made from scrath means not depended on any framework of pythone all work is doen from scrath, means starting from zero.
