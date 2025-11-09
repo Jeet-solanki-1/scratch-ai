@@ -1,4 +1,5 @@
 class Knowledge:
+      #TODO existing defaults (can be replaced by memory repo)
     def __init__(self):
         """ Dfine some default knowledg base """
         self.fact={

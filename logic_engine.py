@@ -1,4 +1,5 @@
 class LogicEngine:
+    # TODO extended logic engine (uses memory manager)
     def decide_response(self, keywords:list[str],kb) -> str:
             """ 
             return a response string based on rules
