@@ -1,5 +1,15 @@
+from typing import List, Optional
+from memory_manager import MemoryManager
+from parser import IntentExtractor
+
 class LogicEngine:
     # TODO extended logic engine (uses memory manager)
+
+    def __init__(self, memory: MemoryManager, extractor: IntentExtractor):
+        self.memory = memory
+        self.extractor = extractor
+        pass
+
     def decide_response(self, keywords:list[str],kb) -> str:
             """ 
             return a response string based on rules
@@ -19,8 +29,22 @@ class LogicEngine:
                 return f"{kb.get_fact('scratch_ai')}."
             else:
                 return f"{kb.get_fact('default_response')}."
-            
-        
+
+    
+        """
+        Full-text entry point for Phase 2. It will:
+          - ask the extractor for intent
+          - for TEACH intent: call memory.set_fact and return confirmation
+          - for QUERY intent: call memory.get_fact and format reply
+          - for COMMAND intent: optionally delegate to CommandHandler
+          - for UNKNOWN: fallback to default response
+        """
+     # minimal helper signatures
+    def _handle_teach(self, key: str, value: str) -> str:
+        pass
+
+    def _handle_query(self, key: str) -> str:
+        pass
 
     """ 
     ******we will try the below apprch later but for readablity adn giving idea of what we are gonna do i am continue with if else!*****
